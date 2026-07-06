@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Hard-pin the deploy target to Vercel instead of the Cloudflare default.
+    // Only applies outside the Lovable sandbox — in-editor previews still use Cloudflare.
+  nitro: {
+    preset: "vercel",
+  },
 });

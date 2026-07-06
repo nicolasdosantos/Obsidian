@@ -21,6 +21,9 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Vercel
+.vercel
+
 # Sandbox-internal scaffolding (not part of the project)
 .workspace/
 .git.orphan-lovable-pointer.bak
