@@ -53,10 +53,11 @@ export function Navbar() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <a href="#" className="flex items-center gap-2.5" data-cursor="hover">
-            <div className="relative h-7 w-7 transition-transform duration-500 hover:rotate-45">
-              <div className="absolute inset-0 rotate-45 rounded-sm bg-gradient-to-br from-white to-white/40" />
-              <div className="absolute inset-1 rotate-45 rounded-sm bg-background" />
-            </div>
+            <img
+              src="/logo.svg"
+              alt="Obsidian"
+              className="h-7 w-7 transition-transform duration-500 hover:rotate-45"
+            />
             <span className="text-[0.95rem] font-semibold tracking-[0.2em]">OBSIDIAN</span>
           </a>
 

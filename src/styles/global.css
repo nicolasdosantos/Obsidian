@@ -127,6 +127,11 @@
     background: oklch(0.72 0.17 245 / 0.35);
     color: white;
   }
+  @media (hover: hover) and (pointer: fine) {
+    * {
+      cursor: none;
+    }
+  }
   h1,
   h2,
   h3,

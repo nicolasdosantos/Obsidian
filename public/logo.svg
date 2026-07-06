@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="none">
+  <defs>
+    <linearGradient id="obsidianLogoGrad" x1="4" y1="4" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M14 1L27 14L14 27L1 14L14 1ZM14 5.828L5.828 14L14 22.172L22.172 14L14 5.828Z"
+    fill="url(#obsidianLogoGrad)"/>
+</svg>
