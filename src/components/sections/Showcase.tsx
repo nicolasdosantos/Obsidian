@@ -90,7 +90,6 @@ export function Showcase() {
                       <img
                         src={slide.src}
                         alt={slide.label}
-                        loading="lazy"
                         decoding="async"
                         className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                       />
