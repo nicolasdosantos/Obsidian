@@ -24,7 +24,7 @@ function PlanCard({ plan }: { plan: PackagePlan }) {
       }`}
     >
       {plan.featured && (
-        <div className="absolute right-6 top-6 rounded-full bg-gradient-to-r from-[color:var(--electric)] to-[color:var(--gold)] px-3 py-1 text-[0.6rem] font-medium uppercase tracking-widest text-background">
+        <div className="absolute right-6 top-6 animate-badge-glow rounded-full bg-gradient-to-r from-[color:var(--electric)] to-[color:var(--gold)] px-3 py-1 text-[0.6rem] font-medium uppercase tracking-widest text-background">
           Mais escolhido
         </div>
       )}

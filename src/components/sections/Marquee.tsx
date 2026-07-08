@@ -19,7 +19,7 @@ export function Marquee() {
         {doubled.map((brand, i) => (
           <span
             key={i}
-            className="font-display text-2xl font-light tracking-widest text-muted-foreground/60"
+            className="font-display text-2xl font-light tracking-widest text-muted-foreground/60 transition-colors duration-300 hover:text-foreground"
           >
             {brand} <span className="mx-8 text-white/10">◆</span>
           </span>

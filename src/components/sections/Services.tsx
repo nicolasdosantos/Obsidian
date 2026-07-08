@@ -22,6 +22,8 @@ function TiltCard({ children, className = "" }: { children: ReactNode; className
     const py = (e.clientY - rect.top) / rect.height - 0.5;
     ry.set(px * 8);
     rx.set(-py * 8);
+    ref.current?.style.setProperty("--spot-x", `${(px + 0.5) * 100}%`);
+    ref.current?.style.setProperty("--spot-y", `${(py + 0.5) * 100}%`);
   };
 
   const handleLeave = () => {
@@ -35,7 +37,7 @@ function TiltCard({ children, className = "" }: { children: ReactNode; className
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
       style={{ rotateX: springRx, rotateY: springRy }}
-      className={`tilt-card ${className}`}
+      className={`tilt-card spotlight ${className}`}
     >
       {children}
     </motion.div>

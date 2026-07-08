@@ -127,6 +127,34 @@
     background: oklch(0.72 0.17 245 / 0.35);
     color: white;
   }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.72 0.17 245 / 0.55) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 2px solid var(--background);
+    background-image: linear-gradient(
+      180deg,
+      oklch(0.72 0.17 245 / 0.7),
+      oklch(0.82 0.11 85 / 0.7)
+    );
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(180deg, oklch(0.72 0.17 245), oklch(0.82 0.11 85));
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
   @media (hover: hover) and (pointer: fine) {
     * {
       cursor: none;
@@ -311,4 +339,41 @@
 }
 @utility animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes badge-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.72 0.17 245 / 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px oklch(0.72 0.17 245 / 0);
+  }
+}
+@utility animate-badge-glow {
+  animation: badge-glow 2.4s ease-in-out infinite;
+}
+
+/* Cursor-tracked sheen used on interactive cards — driven by --spot-x/--spot-y
+   custom properties set directly on the element's style from an existing
+   mousemove handler, so it never triggers a React re-render. */
+@utility spotlight {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    background: radial-gradient(
+      320px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      oklch(1 0 0 / 0.06),
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
 }

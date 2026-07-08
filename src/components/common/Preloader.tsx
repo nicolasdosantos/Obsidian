@@ -55,9 +55,11 @@ export function Preloader() {
               background:
                 "conic-gradient(from 0deg, transparent 0%, oklch(0.72 0.17 245 / 0.9) 12%, transparent 28%, transparent 72%, oklch(0.82 0.11 85 / 0.8) 88%, transparent 100%)",
               WebkitMask:
-                "radial-gradient(closest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))",
-              mask: "radial-gradient(closest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))",
+                "radial-gradient(closest-side, transparent calc(100% - 6px), #000 calc(100% - 3px))",
+              mask: "radial-gradient(closest-side, transparent calc(100% - 6px), #000 calc(100% - 3px))",
               filter: "drop-shadow(0 0 10px oklch(0.72 0.17 245 / 0.5))",
+              willChange: "transform",
+              backfaceVisibility: "hidden",
             }}
           />
           <motion.div
@@ -72,8 +74,10 @@ export function Preloader() {
               background:
                 "conic-gradient(from 90deg, transparent 0%, oklch(0.82 0.11 85 / 0.6) 8%, transparent 22%, transparent 78%, oklch(0.72 0.17 245 / 0.6) 92%, transparent 100%)",
               WebkitMask:
-                "radial-gradient(closest-side, transparent calc(100% - 2px), #000 calc(100% - 2px))",
-              mask: "radial-gradient(closest-side, transparent calc(100% - 2px), #000 calc(100% - 2px))",
+                "radial-gradient(closest-side, transparent calc(100% - 5px), #000 calc(100% - 2px))",
+              mask: "radial-gradient(closest-side, transparent calc(100% - 5px), #000 calc(100% - 2px))",
+              willChange: "transform",
+              backfaceVisibility: "hidden",
             }}
           />
 

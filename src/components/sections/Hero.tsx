@@ -94,7 +94,11 @@ export function Hero() {
               { k: "5.0★", v: "Avaliação Google" },
               { k: "5 anos", v: "Garantia premium" },
             ].map((s) => (
-              <div key={s.v} className="bg-background/40 px-6 py-6 md:py-7">
+              <div
+                key={s.v}
+                className="bg-background/40 px-6 py-6 transition-colors duration-500 hover:bg-white/[0.03] md:py-7"
+              >
+
                 <div className="font-display text-2xl font-light md:text-4xl">{s.k}</div>
                 <div className="mt-1 text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground">
                   {s.v}
