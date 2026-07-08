@@ -38,6 +38,12 @@ export function Reveal({
 
   useEffect(() => {
     if (observedInView || fallbackVisible) return;
+    // The geometric fallback below exists only to patch IntersectionObserver
+    // misreporting inside Lovable's scaled-iframe editor preview. Real visitors
+    // load the page top-level, so skip registering scroll/resize listeners and
+    // interval polling for every Reveal instance — with dozens mounted per page
+    // that polling was a significant source of scroll jank.
+    if (typeof window === "undefined" || window.self === window.top) return;
     const check = () => {
       const el = ref.current;
       if (el && isGeometricallyInView(el)) setFallbackVisible(true);

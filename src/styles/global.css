@@ -284,6 +284,22 @@
   animation: marquee 40s linear infinite;
 }
 
+@keyframes particle-float {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(-20px);
+  }
+}
+@utility animate-particle-float {
+  animation: particle-float 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
 @keyframes pulse-glow {
   0%,
   100% {

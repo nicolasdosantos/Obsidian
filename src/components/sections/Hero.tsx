@@ -29,12 +29,15 @@ export function Hero() {
       {/* particles */}
       <div className="pointer-events-none absolute inset-0">
         {Array.from({ length: 30 }).map((_, i) => (
-          <motion.span
+          <span
             key={i}
-            className="absolute h-1 w-1 rounded-full bg-white/40"
-            style={{ left: `${(i * 37) % 100}%`, top: `${(i * 71) % 100}%` }}
-            animate={{ opacity: [0.1, 0.6, 0.1], y: [0, -20, 0] }}
-            transition={{ duration: 4 + (i % 5), repeat: Infinity, delay: i * 0.15 }}
+            className="absolute h-1 w-1 rounded-full bg-white/40 animate-particle-float"
+            style={{
+              left: `${(i * 37) % 100}%`,
+              top: `${(i * 71) % 100}%`,
+              animationDuration: `${4 + (i % 5)}s`,
+              animationDelay: `${i * 0.15}s`,
+            }}
           />
         ))}
       </div>
