@@ -27,6 +27,7 @@ dist-ssr
 # Sandbox-internal scaffolding (not part of the project)
 .workspace/
 .git.orphan-lovable-pointer.bak
+.lovable/
 
 # Editor directories and files
 .vscode/*

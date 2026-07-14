@@ -12,10 +12,10 @@ function StepCard({ step, align }: { step: ProcessStep; align: "left" | "right" 
       className={`glass rounded-2xl p-6 md:p-8 hover-float ${align === "right" ? "md:text-right" : ""}`}
     >
       <div className="font-mono text-[0.7rem] tracking-widest text-muted-foreground">
-        STEP {step.n}
+        STEP {step.number}
       </div>
-      <h3 className="mt-2 font-display text-2xl font-light md:text-3xl">{step.t}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.d}</p>
+      <h3 className="mt-2 font-display text-2xl font-light md:text-3xl">{step.title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.description}</p>
     </div>
   );
 }
@@ -46,20 +46,20 @@ export function Process() {
           />
 
           <div className="relative z-10 space-y-10 md:space-y-14">
-            {PROCESS_STEPS.map((s, i) => {
+            {PROCESS_STEPS.map((step, i) => {
               const reversed = i % 2 === 1;
               return (
-                <Reveal key={s.n} delay={i * 0.1}>
+                <Reveal key={step.number} delay={i * 0.1}>
                   <div className="grid grid-cols-[2.25rem_1fr] items-start gap-6 md:grid-cols-[1fr_2.25rem_1fr] md:gap-10">
                     {/* desktop left slot */}
                     <div className="hidden md:block">
-                      {!reversed && <StepCard step={s} align="right" />}
+                      {!reversed && <StepCard step={step} align="right" />}
                     </div>
 
                     {/* icon — always centered on the line, opaque so it masks it cleanly */}
                     <div className="md:justify-self-center">
                       <div className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-background shadow-[0_0_0_6px_var(--background)]">
-                        <s.icon
+                        <step.icon
                           className="h-4 w-4 text-[color:var(--electric)]"
                           strokeWidth={1.5}
                         />
@@ -68,12 +68,12 @@ export function Process() {
 
                     {/* mobile card */}
                     <div className="md:hidden">
-                      <StepCard step={s} align="left" />
+                      <StepCard step={step} align="left" />
                     </div>
 
                     {/* desktop right slot */}
                     <div className="hidden md:block">
-                      {reversed && <StepCard step={s} align="left" />}
+                      {reversed && <StepCard step={step} align="left" />}
                     </div>
                   </div>
                 </Reveal>

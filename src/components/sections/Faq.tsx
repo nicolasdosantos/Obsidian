@@ -21,8 +21,8 @@ export function Faq() {
         </Reveal>
 
         <div className="mt-16 divide-y divide-white/5 border-y border-white/5">
-          {FAQ_ITEMS.map((f, i) => (
-            <Reveal key={f.q} delay={i * 0.05}>
+          {FAQ_ITEMS.map((faq, i) => (
+            <Reveal key={faq.question} delay={i * 0.05}>
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
@@ -30,7 +30,7 @@ export function Faq() {
                 className="group flex w-full items-center justify-between gap-6 py-7 text-left"
               >
                 <span className="font-display text-lg font-light md:text-2xl transition-colors group-hover:text-silver">
-                  {f.q}
+                  {faq.question}
                 </span>
                 <div className="relative h-8 w-8 shrink-0 grid place-items-center rounded-full glass">
                   <AnimatePresence mode="wait">
@@ -68,7 +68,7 @@ export function Faq() {
                     className="overflow-hidden"
                   >
                     <p className="pb-9 pr-16 text-sm leading-relaxed text-muted-foreground md:text-base">
-                      {f.a}
+                      {faq.answer}
                     </p>
                   </motion.div>
                 )}

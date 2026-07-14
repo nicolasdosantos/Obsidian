@@ -98,14 +98,7 @@ src/
 
 ## Deploy
 
-### Fluxo atual — Lovable / Cloudflare
-
-O preset padrão do Nitro é configurado por `@lovable.dev/vite-tanstack-config` (ver [`vite.config.ts`](vite.config.ts)), com alvo Cloudflare. O repositório está conectado ao [Lovable](https://lovable.dev): commits na branch conectada sincronizam automaticamente com o editor.
-
-> [!IMPORTANT]
-> Não faça force push, rebase ou amend em commits já publicados — isso reescreve o histórico do lado do Lovable (ver [`AGENTS.md`](AGENTS.md)).
-
-### Deploy alternativo — Vercel
+O projeto builda com Vite + Nitro, que suporta múltiplos presets de deploy. O alvo atual é **Vercel**:
 
 ```ts
 // vite.config.ts
@@ -118,8 +111,6 @@ export default defineConfig({
 1. Importe o repositório na Vercel (Framework Preset: **Other** — o Nitro cuida do build).
 2. Build Command: `npm run build`. Output gerenciado pelo adapter Vercel do Nitro (`.vercel/output`).
 3. Configure variáveis de ambiente, se houver, em *Project Settings → Environment Variables*.
-
-Como isso desacopla o deploy do fluxo padrão do Lovable, confirme com o time se a sincronização automática ainda é necessária antes de migrar.
 
 ## Notas de manutenção
 

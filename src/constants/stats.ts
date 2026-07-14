@@ -1,8 +1,8 @@
 import type { StatItem } from "@/types/sections";
 
 export const STATS: StatItem[] = [
-  { n: 500, s: "+", l: "Veículos atendidos" },
-  { n: 98, s: "%", l: "Clientes satisfeitos" },
-  { n: 10, s: " anos", l: "De experiência" },
-  { n: 4.9, s: "★", l: "Avaliação média" },
+  { value: 500, suffix: "+", label: "Veículos atendidos" },
+  { value: 98, suffix: "%", label: "Clientes satisfeitos" },
+  { value: 10, suffix: " anos", label: "De experiência" },
+  { value: 4.9, suffix: "★", label: "Avaliação média" },
 ];

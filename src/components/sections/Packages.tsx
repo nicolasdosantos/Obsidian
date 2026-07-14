@@ -96,9 +96,9 @@ export function Packages() {
 
         {/* desktop: static grid */}
         <div className="mt-20 hidden gap-6 lg:grid lg:grid-cols-3 lg:items-center">
-          {PACKAGE_PLANS.map((p, i) => (
-            <Reveal key={p.name} delay={i * 0.1}>
-              <PlanCard plan={p} />
+          {PACKAGE_PLANS.map((plan, i) => (
+            <Reveal key={plan.name} delay={i * 0.1}>
+              <PlanCard plan={plan} />
             </Reveal>
           ))}
         </div>
@@ -107,9 +107,9 @@ export function Packages() {
         <Reveal delay={0.1} className="mt-20 lg:hidden">
           <Carousel setApi={setApi} opts={{ loop: true, align: "center" }}>
             <CarouselContent>
-              {PACKAGE_PLANS.map((p) => (
-                <CarouselItem key={p.name} className="basis-[88%] pl-4 sm:basis-[60%]">
-                  <PlanCard plan={p} />
+              {PACKAGE_PLANS.map((plan) => (
+                <CarouselItem key={plan.name} className="basis-[88%] pl-4 sm:basis-[60%]">
+                  <PlanCard plan={plan} />
                 </CarouselItem>
               ))}
             </CarouselContent>

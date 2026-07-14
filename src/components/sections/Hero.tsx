@@ -5,6 +5,12 @@ import heroCar from "@/assets/images/hero-car.jpg";
 import { Reveal } from "@/components/common/Reveal";
 import { GlowButton } from "@/components/common/GlowButton";
 
+const HERO_INDICATORS = [
+  { value: "+300", label: "Veículos atendidos" },
+  { value: "5.0★", label: "Avaliação Google" },
+  { value: "5 anos", label: "Garantia premium" },
+];
+
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -89,19 +95,16 @@ export function Hero() {
         {/* indicators */}
         <Reveal delay={0.85} className="mt-16">
           <div className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl glass">
-            {[
-              { k: "+300", v: "Veículos atendidos" },
-              { k: "5.0★", v: "Avaliação Google" },
-              { k: "5 anos", v: "Garantia premium" },
-            ].map((s) => (
+            {HERO_INDICATORS.map((indicator) => (
               <div
-                key={s.v}
+                key={indicator.label}
                 className="bg-background/40 px-6 py-6 transition-colors duration-500 hover:bg-white/[0.03] md:py-7"
               >
-
-                <div className="font-display text-2xl font-light md:text-4xl">{s.k}</div>
+                <div className="font-display text-2xl font-light md:text-4xl">
+                  {indicator.value}
+                </div>
                 <div className="mt-1 text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground">
-                  {s.v}
+                  {indicator.label}
                 </div>
               </div>
             ))}

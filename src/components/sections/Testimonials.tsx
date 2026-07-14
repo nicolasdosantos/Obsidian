@@ -71,8 +71,11 @@ export function Testimonials() {
         <Reveal delay={0.15} className="mt-16">
           <Carousel setApi={setApi} opts={{ loop: true, align: "start" }}>
             <CarouselContent>
-              {TESTIMONIALS.map((t) => (
-                <CarouselItem key={t.name} className="basis-full pl-6 md:basis-1/2 lg:basis-[42%]">
+              {TESTIMONIALS.map((testimonial) => (
+                <CarouselItem
+                  key={testimonial.name}
+                  className="basis-full pl-6 md:basis-1/2 lg:basis-[42%]"
+                >
                   <div className="relative flex h-full flex-col overflow-hidden rounded-3xl glass p-8 md:p-10">
                     <span
                       aria-hidden="true"
@@ -89,12 +92,12 @@ export function Testimonials() {
                       ))}
                     </div>
                     <p className="flex-1 font-display text-xl font-light leading-relaxed md:text-2xl">
-                      "{t.quote}"
+                      "{testimonial.quote}"
                     </p>
                     <div className="mt-8">
-                      <div className="text-sm font-medium">{t.name}</div>
+                      <div className="text-sm font-medium">{testimonial.name}</div>
                       <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-                        {t.role}
+                        {testimonial.role}
                       </div>
                     </div>
                   </div>

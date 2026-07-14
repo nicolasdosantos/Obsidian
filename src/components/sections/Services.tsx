@@ -66,11 +66,11 @@ export function Services() {
         </Reveal>
 
         <div className="mt-20 grid auto-rows-[200px] grid-cols-1 gap-4 md:auto-rows-[180px] md:grid-cols-3">
-          {SERVICES.map((s, i) => {
+          {SERVICES.map((service, i) => {
             const featured = i === 0;
             return (
               <Reveal
-                key={s.name}
+                key={service.name}
                 delay={i * 0.08}
                 className={featured ? "md:col-span-2 md:row-span-2" : ""}
               >
@@ -96,25 +96,25 @@ export function Services() {
                       featured ? "text-[10rem]" : "text-[6rem]"
                     }`}
                   >
-                    {s.tag}
+                    {service.tag}
                   </span>
 
                   <div
                     className={`relative flex h-full flex-col justify-between p-8 ${featured ? "md:p-10" : ""}`}
                   >
                     <div className="rounded-2xl glass w-fit p-3.5 transition-transform duration-700 group-hover:-translate-y-1 group-hover:rotate-3">
-                      <s.icon className="h-5 w-5 text-foreground" strokeWidth={1.25} />
+                      <service.icon className="h-5 w-5 text-foreground" strokeWidth={1.25} />
                     </div>
                     <div>
                       <h3
                         className={`font-display font-light leading-tight ${featured ? "text-3xl md:text-4xl" : "text-xl"}`}
                       >
-                        {s.name}
+                        {service.name}
                       </h3>
                       <p
                         className={`mt-3 text-sm leading-relaxed text-muted-foreground ${featured ? "max-w-md" : ""}`}
                       >
-                        {s.desc}
+                        {service.desc}
                       </p>
                       <div className="mt-6 flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground transition-colors group-hover:text-foreground">
                         Saiba mais{" "}

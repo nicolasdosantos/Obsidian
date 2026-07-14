@@ -42,8 +42,8 @@ export function Differentiators() {
     <section className="relative py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 divide-y divide-white/5 rounded-3xl border border-white/5 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
-          {DIFFERENTIATORS.map((d, i) => (
-            <DifferentiatorCell key={d.title} item={d} delay={i * 0.08} />
+          {DIFFERENTIATORS.map((item, i) => (
+            <DifferentiatorCell key={item.title} item={item} delay={i * 0.08} />
           ))}
         </div>
       </div>

@@ -9,25 +9,25 @@ export function Stats() {
         <Reveal>
           <div className="glass-strong gradient-border grid-lines rounded-3xl overflow-hidden">
             <div className="grid grid-cols-2 gap-px lg:grid-cols-4">
-              {STATS.map((st, i) => {
+              {STATS.map((stat, i) => {
                 const highlighted = i === 1;
                 return (
                   <div
-                    key={i}
+                    key={stat.label}
                     className={`bg-background/40 px-6 py-12 text-center md:py-16 ${highlighted ? "bg-[color:var(--electric)]/[0.04]" : ""}`}
                   >
                     <div
                       className={`font-display font-extralight tracking-tight ${highlighted ? "text-6xl md:text-8xl" : "text-5xl md:text-7xl"}`}
                     >
-                      {st.n % 1 === 0 ? <Counter to={st.n} /> : <>{st.n}</>}
+                      {stat.value % 1 === 0 ? <Counter to={stat.value} /> : <>{stat.value}</>}
                       <span
                         className={highlighted ? "text-[color:var(--electric)]" : "text-silver"}
                       >
-                        {st.s}
+                        {stat.suffix}
                       </span>
                     </div>
                     <div className="mt-3 text-[0.7rem] uppercase tracking-[0.25em] text-muted-foreground">
-                      {st.l}
+                      {stat.label}
                     </div>
                   </div>
                 );

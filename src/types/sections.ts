@@ -19,16 +19,16 @@ export interface GalleryItem {
 }
 
 export interface ProcessStep {
-  n: string;
-  t: string;
-  d: string;
+  number: string;
+  title: string;
+  description: string;
   icon: LucideIcon;
 }
 
 export interface StatItem {
-  n: number;
-  s: string;
-  l: string;
+  value: number;
+  suffix: string;
+  label: string;
 }
 
 export interface TestimonialItem {
@@ -47,8 +47,8 @@ export interface PackagePlan {
 }
 
 export interface FaqItem {
-  q: string;
-  a: string;
+  question: string;
+  answer: string;
 }
 
 export interface DifferentiatorItem {

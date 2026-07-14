@@ -24,16 +24,16 @@ export function Gallery() {
         </Reveal>
 
         <div className="mt-16 grid auto-rows-[240px] grid-cols-1 gap-4 md:grid-cols-4 md:auto-rows-[280px]">
-          {GALLERY_ITEMS.map((it, i) => (
+          {GALLERY_ITEMS.map((item, i) => (
             <Reveal
-              key={i}
+              key={item.label}
               delay={i * 0.08}
               mask
-              className={`group relative overflow-hidden rounded-2xl ${it.span}`}
+              className={`group relative overflow-hidden rounded-2xl ${item.span}`}
             >
               <img
-                src={it.src}
-                alt={it.label}
+                src={item.src}
+                alt={item.label}
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-110"
@@ -43,7 +43,7 @@ export function Gallery() {
                 <span className="text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
                   Estudo · 2025
                 </span>
-                <div className="mt-1 font-display text-xl font-light">{it.label}</div>
+                <div className="mt-1 font-display text-xl font-light">{item.label}</div>
               </div>
               <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-2xl" />
             </Reveal>
